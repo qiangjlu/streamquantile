@@ -11,25 +11,23 @@
 import random
 
 class FindQuantile1U:
-    def __init__(self, quant, k):
+    def __init__(self, q):
         self.M = 0
-        self.quant = float(quant)
-        self.k = float(k)
+        self.q = q
         self.label = "FindpQuantile-1U"
-        self.labelerr = self.label + "_rankerr"
         self.ests = [self.label] ### record estimation history
         self.rankerrs = [self.labelerr]
     
-    def GetEstimate(self, N=None, quan=None, k=None):
+    def GetEstimate(self):
         return self.M
     
-    def Adjust(self, item):
+    def Update(self, item):
         item = int(item)
         if item > self.M:
-            if random.random() > 1 - self.quant / self.k:
+            if random.random() > 1 - self.q:
                 self.M += 1
         elif item < self.M:
-            if random.random() > self.quant / self.k:
+            if random.random() > self.q:
                 self.M -= 1
 
     def Record(self, est=None):
