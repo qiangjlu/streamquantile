@@ -1,5 +1,5 @@
 # streamquantile
-Several algorithms to approximate stream quantiles using very few memory, or a.k.a frugal algorithms.
+Frugal quantile estimation algorithms to approximate stream quantiles using very few memory O(1), or a.k.a frugal algorithms.
 
 Based on the following papers:
 > 1. Ma, Qiang, S. Muthukrishnan, and Mark Sandler. "Frugal streaming for estimating quantiles." Space-Efficient Data Structures, Streams, and Algorithms. Springer Berlin Heidelberg, 2013. 77-96. 
